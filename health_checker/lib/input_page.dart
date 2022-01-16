@@ -28,7 +28,11 @@ class _InputPageState extends State<InputPage> {
                       cardChild: CardContent(), color: activeCardColor),
                 ),
                 Expanded(
-                  child: ReusableCard(color: activeCardColor),
+                  child: ReusableCard(
+                      cardChild: CardContent(
+                        icon: Icon(FontAwesomeIcons.female),
+                      ),
+                      color: activeCardColor),
                 ),
               ],
             ),
