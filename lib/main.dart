@@ -1,4 +1,22 @@
-import 'package:flutter/material.dart';
+import 'dart:ui';
+import 'package:flutter/material.dart'
+    show
+        AppBar,
+        BuildContext,
+        Center,
+        Color,
+        FloatingActionButton,
+        Icon,
+        Icons,
+        MaterialApp,
+        Scaffold,
+        State,
+        StatefulWidget,
+        StatelessWidget,
+        Text,
+        ThemeData,
+        Widget,
+        runApp;
 
 void main() => runApp(BMICalculator());
 
