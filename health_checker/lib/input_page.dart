@@ -16,6 +16,30 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Color maleCardColor = inactiveCardColor;
+  Color femaleCardColor = inactiveCardColor;
+
+  void updateColor(int gender) {
+    // if (gender == 'male' && maleCardColor == inactiveCardColor) {
+    //   maleCardColor == activeCardColor;
+    // } else {
+    //   maleCardColor == inactiveCardColor;
+    // }
+
+    // if (gender == 'female' && femaleCardColor == inactiveCardColor) {
+    //   femaleCardColor == activeCardColor;
+    // } else {
+    //   maleCardColor == inactiveCardColor;
+    // }
+    if (gender == 1) {
+      if (maleCardColor == inactiveCardColor) {
+        maleCardColor = activeCardColor;
+      } else {
+        maleCardColor = inactiveCardColor;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,8 +56,7 @@ class _InputPageState extends State<InputPage> {
                     onTap: () {
                       print('card press');
                       setState(() {
-                        color:
-                        inactiveCardColor;
+                        updateColor(1);
                       });
                     },
                     child: const ReusableCard(
@@ -41,16 +64,24 @@ class _InputPageState extends State<InputPage> {
                           text: 'MALE',
                           icon: FontAwesomeIcons.mars,
                         ),
-                        color: inactiveCardColor),
+                        color: activeCardColor),
                   ),
                 ),
-                const Expanded(
-                  child: ReusableCard(
-                      cardChild: CardContent(
-                        text: 'FEMALE',
-                        icon: FontAwesomeIcons.venus,
-                      ),
-                      color: inactiveCardColor),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      print('card press');
+                      setState(() {
+                        updateColor(1);
+                      });
+                    },
+                    child: const ReusableCard(
+                        cardChild: CardContent(
+                          text: 'FEMALE',
+                          icon: FontAwesomeIcons.venus,
+                        ),
+                        color: activeCardColor),
+                  ),
                 ),
               ],
             ),
