@@ -25,20 +25,20 @@ class _InputPageState extends State<InputPage> {
   Color femaleCardColor = inactiveCardColor;
 
   void updateColor(Gender gender) {
+    // Ternary operator is used here in replace of if else statement
     //male card pressed
-    if (gender == Gender.male && maleCardColor == inactiveCardColor) {
-      maleCardColor = activeCardColor;
-      // femaleCardColor = inactiveCardColor;
-    } else {
-      maleCardColor = inactiveCardColor;
-    }
-//female card pressed
-    if (gender == Gender.female && femaleCardColor == inactiveCardColor) {
-      femaleCardColor = activeCardColor;
-    } else {
-      femaleCardColor = inactiveCardColor;
-      //maleCardColor = activeCardColor;
-    }
+    gender == Gender.male && maleCardColor == inactiveCardColor
+        ? maleCardColor = activeCardColor
+        // femaleCardColor = inactiveCardColor;
+        : maleCardColor = inactiveCardColor;
+
+    // Ternary operator is used here in replace of if else statement
+    //female card pressed
+    gender == Gender.female && femaleCardColor == inactiveCardColor
+        ? femaleCardColor = activeCardColor
+        : femaleCardColor = inactiveCardColor;
+    //maleCardColor = activeCardColor;
+
     // if (gender == 1) {
     //   if (maleCardColor == inactiveCardColor) {
     //     maleCardColor = activeCardColor;
