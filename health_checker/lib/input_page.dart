@@ -36,8 +36,8 @@ class _InputPageState extends State<InputPage> {
     //female card pressed
     gender == Gender.female && femaleCardColor == inactiveCardColor
         ? femaleCardColor = activeCardColor
+        //maleCardColor = activeCardColor;
         : femaleCardColor = inactiveCardColor;
-    //maleCardColor = activeCardColor;
 
     // if (gender == 1) {
     //   if (maleCardColor == inactiveCardColor) {
