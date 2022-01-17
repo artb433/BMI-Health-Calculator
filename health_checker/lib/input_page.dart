@@ -97,7 +97,7 @@ class _InputPageState extends State<InputPage> {
                   children: const [
                     Text(
                       'HEIGHT',
-                      style: kLabelTextStyle,
+                      style: TextStyle(fontSize: 18, color: Colors.white),
                     )
                   ],
                 ),
