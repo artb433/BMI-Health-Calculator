@@ -4,8 +4,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'custom_widget.dart/card_content.dart';
 import 'custom_widget.dart/reusable_card.dart';
 
-const activeCardColor = Color(0xFF4285F4);
-const bottomContainerColor = Color(0xFFEB155);
+const activeCardColor = Color(0xFF1D1E33);
+const bottomContainerColor = Color(0xFFEB1555);
+const inactiveCardColor = Color(0xFF111328);
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -25,22 +26,31 @@ class _InputPageState extends State<InputPage> {
         children: [
           Expanded(
             child: Row(
-              children: const [
+              children: [
                 Expanded(
-                  child: ReusableCard(
-                      cardChild: CardContent(
-                        text: 'MALE',
-                        icon: FontAwesomeIcons.mars,
-                      ),
-                      color: activeCardColor),
+                  child: GestureDetector(
+                    onTap: () {
+                      print('card press');
+                      setState(() {
+                        color:
+                        inactiveCardColor;
+                      });
+                    },
+                    child: const ReusableCard(
+                        cardChild: CardContent(
+                          text: 'MALE',
+                          icon: FontAwesomeIcons.mars,
+                        ),
+                        color: inactiveCardColor),
+                  ),
                 ),
-                Expanded(
+                const Expanded(
                   child: ReusableCard(
                       cardChild: CardContent(
                         text: 'FEMALE',
                         icon: FontAwesomeIcons.venus,
                       ),
-                      color: activeCardColor),
+                      color: inactiveCardColor),
                 ),
               ],
             ),
