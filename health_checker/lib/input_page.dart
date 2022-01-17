@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'custom_widget.dart/card_content.dart';
+import 'custom_widget.dart/reusable_card.dart';
+
 const activeCardColor = Color(0xFF4285F4);
 const bottomContainerColor = Color(0xFFEB155);
 
@@ -26,6 +29,7 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                       cardChild: CardContent(
+                        text: 'MALE',
                         icon: FontAwesomeIcons.mars,
                       ),
                       color: activeCardColor),
@@ -33,7 +37,8 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                       cardChild: CardContent(
-                        icon: FontAwesomeIcons.female,
+                        text: 'FEMALE',
+                        icon: FontAwesomeIcons.venus,
                       ),
                       color: activeCardColor),
                 ),
@@ -68,47 +73,5 @@ class _InputPageState extends State<InputPage> {
         child: const Icon(Icons.add),
       ),
     );
-  }
-}
-
-class CardContent extends StatelessWidget {
-  const CardContent({
-    Key? key,
-    this.icon,
-    this.text,
-  }) : super(key: key);
-  final IconData? icon;
-  final String? text;
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          size: 80,
-        ),
-        const SizedBox(
-          height: 15,
-        ),
-        Text(text.toString(),
-            style: const TextStyle(fontSize: 18, color: Colors.white))
-      ],
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  const ReusableCard({Key? key, required this.color, this.cardChild})
-      : super(key: key);
-  final Color? color;
-  final Widget? cardChild;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        child: cardChild,
-        decoration: BoxDecoration(
-            color: color, borderRadius: BorderRadius.circular(15)),
-        margin: const EdgeInsets.all(15));
   }
 }
