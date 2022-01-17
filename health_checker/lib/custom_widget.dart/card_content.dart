@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_checker/constants.dart/constants.dart';
 
 class CardContent extends StatelessWidget {
   const CardContent({
@@ -20,8 +21,7 @@ class CardContent extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        Text(text.toString(),
-            style: const TextStyle(fontSize: 18, color: Colors.white))
+        Text(text.toString(), style: kLabelTextStyle)
       ],
     );
   }

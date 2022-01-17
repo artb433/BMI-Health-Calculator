@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'constants.dart/constants.dart';
 import 'custom_widget.dart/card_content.dart';
 import 'custom_widget.dart/reusable_card.dart';
-
-const activeCardColor = Color(0xFF1D1E33);
-const bottomContainerColor = Color(0xFFEB1555);
-const inactiveCardColor = Color(0xFF111328);
 
 enum Gender {
   male,
@@ -21,31 +18,31 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColor = inactiveCardColor;
-  Color femaleCardColor = inactiveCardColor;
+  Color maleCardColor = kInactiveCardColor;
+  Color femaleCardColor = kInactiveCardColor;
 
   void updateColor(Gender gender) {
     // Ternary operator is used here in replace of if else statement
     //male card pressed
-    gender == Gender.male && maleCardColor == inactiveCardColor
-        ? maleCardColor = activeCardColor
+    gender == Gender.male && maleCardColor == kInactiveCardColor
+        ? maleCardColor = kActiveCardColor
         // femaleCardColor = inactiveCardColor;
-        : maleCardColor = inactiveCardColor;
+        : maleCardColor = kInactiveCardColor;
 
     // Ternary operator is used here in replace of if else statement
     //female card pressed
-    gender == Gender.female && femaleCardColor == inactiveCardColor
-        ? femaleCardColor = activeCardColor
+    gender == Gender.female && femaleCardColor == kInactiveCardColor
+        ? femaleCardColor = kActiveCardColor
         //maleCardColor = activeCardColor;
-        : femaleCardColor = inactiveCardColor;
+        : femaleCardColor = kInactiveCardColor;
 
-    // if (gender == 1) {
-    //   if (maleCardColor == inactiveCardColor) {
-    //     maleCardColor = activeCardColor;
-    //   } else {
-    //     maleCardColor = inactiveCardColor;
-    //   }
-    // }
+    /// if (gender == 1) {
+    ///   if (maleCardColor == inactiveCardColor) {
+    ///     maleCardColor = activeCardColor;
+    ///   } else {
+    ///     maleCardColor = inactiveCardColor;
+    ///   }
+    /// }
   }
 
   @override
@@ -94,23 +91,32 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          const Expanded(
-            child: ReusableCard(color: activeCardColor),
+          Expanded(
+            child: ReusableCard(
+                cardChild: Column(
+                  children: const [
+                    Text(
+                      'HEIGHT',
+                      style: kLabelTextStyle,
+                    )
+                  ],
+                ),
+                color: kActiveCardColor),
           ),
           Expanded(
             child: Row(
               children: const [
                 Expanded(
-                  child: ReusableCard(color: activeCardColor),
+                  child: ReusableCard(color: kActiveCardColor),
                 ),
                 Expanded(
-                  child: ReusableCard(color: activeCardColor),
+                  child: ReusableCard(color: kActiveCardColor),
                 ),
               ],
             ),
           ),
           Container(
-            color: bottomContainerColor,
+            color: kBottomContainerColor,
             margin: const EdgeInsets.only(top: 10),
             width: MediaQuery.of(context).size.width,
             height: 60,
