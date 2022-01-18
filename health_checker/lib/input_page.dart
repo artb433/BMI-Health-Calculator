@@ -20,6 +20,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   double height = 180.0;
   int weight = 20;
+  int age = 1;
   Color maleCardColor = kInactiveCardColor;
   Color femaleCardColor = kInactiveCardColor;
 
@@ -147,6 +148,8 @@ class _InputPageState extends State<InputPage> {
                             ],
                           ),
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               RoundIconButton(
                                   icon: Icons.add,
@@ -155,6 +158,7 @@ class _InputPageState extends State<InputPage> {
                                       weight--;
                                     });
                                   }),
+                              const SizedBox(width: 15),
                               RoundIconButton(
                                   icon: Icons.add,
                                   onPressed: () {
@@ -168,8 +172,45 @@ class _InputPageState extends State<InputPage> {
                       ),
                       color: kActiveCardColor),
                 ),
-                const Expanded(
-                  child: ReusableCard(color: kActiveCardColor),
+                Expanded(
+                  child: ReusableCard(
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'AGE',
+                            style: kLabelTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(age.toString(), style: kNumberTextStyle),
+                            ],
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              RoundIconButton(
+                                  icon: FontAwesomeIcons.minus,
+                                  onPressed: () {
+                                    setState(() {
+                                      age--;
+                                    });
+                                  }),
+                              const SizedBox(width: 15),
+                              RoundIconButton(
+                                  icon: FontAwesomeIcons.plus,
+                                  onPressed: () {
+                                    setState(() {
+                                      age++;
+                                    });
+                                  }),
+                            ],
+                          )
+                        ],
+                      ),
+                      color: kActiveCardColor),
                 ),
               ],
             ),
