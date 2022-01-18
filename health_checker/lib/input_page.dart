@@ -19,6 +19,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   double height = 180.0;
+  int weight = 20;
   Color maleCardColor = kInactiveCardColor;
   Color femaleCardColor = kInactiveCardColor;
 
@@ -129,11 +130,29 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: Row(
-              children: const [
+              children: [
                 Expanded(
-                  child: ReusableCard(color: kActiveCardColor),
+                  child: ReusableCard(
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'WEIGHT',
+                            style: kLabelTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.alphabetic,
+                            children: [
+                              Text(weight.toString(), style: kNumberTextStyle),
+                            ],
+                          ),
+                        ],
+                      ),
+                      color: kActiveCardColor),
                 ),
-                Expanded(
+                const Expanded(
                   child: ReusableCard(color: kActiveCardColor),
                 ),
               ],
@@ -156,7 +175,7 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundIconButton extends StatelessWidget {
-  const RoundIconButton({Key? key, this.icon, this.onPressed})
+  const RoundIconButton({Key? key, required this.icon, required this.onPressed})
       : super(key: key);
 
   final IconData? icon;
