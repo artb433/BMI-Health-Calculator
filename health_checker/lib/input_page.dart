@@ -107,18 +107,14 @@ class _InputPageState extends State<InputPage> {
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       textBaseline: TextBaseline.alphabetic,
                       children: [
-                        Text(height.toString(),
-                            style: const TextStyle(
-                                fontWeight: FontWeight.w900,
-                                fontSize: 40,
-                                color: Colors.white)),
+                        Text(height.toString(), style: kNumberTextStyle),
                         const Text('cm')
                       ],
                     ),
                     Slider(
                         value: height,
-                        min: 22,
-                        max: 200,
+                        min: 122,
+                        max: 220,
                         activeColor: const Color(0xFFEB1555),
                         inactiveColor: const Color(0xFF111328),
                         onChanged: (double newValue) {
@@ -155,6 +151,29 @@ class _InputPageState extends State<InputPage> {
         onPressed: () {},
         child: const Icon(Icons.add),
       ),
+    );
+  }
+}
+
+class RoundActionButton extends StatelessWidget {
+  const RoundActionButton({Key? key, this.icon, this.onPressed})
+      : super(key: key);
+
+  final IconData? icon;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      onPressed: onPressed,
+      elevation: 0.0,
+      child: Icon(icon),
+      constraints: const BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+      ),
+      shape: const CircleBorder(),
+      fillColor: const Color(0xFF4C4F5E),
     );
   }
 }
