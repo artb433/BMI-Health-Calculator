@@ -18,6 +18,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  double height = 180.0;
   Color maleCardColor = kInactiveCardColor;
   Color femaleCardColor = kInactiveCardColor;
 
@@ -52,6 +53,7 @@ class _InputPageState extends State<InputPage> {
         title: const Text('BMI CALCULATOR'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -94,11 +96,37 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: ReusableCard(
                 cardChild: Column(
-                  children: const [
-                    Text(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
                       'HEIGHT',
-                      style: TextStyle(fontSize: 18, color: Colors.white),
-                    )
+                      style: kLabelTextStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(height.toString(),
+                            style: const TextStyle(
+                                fontWeight: FontWeight.w900,
+                                fontSize: 40,
+                                color: Colors.white)),
+                        const Text('cm')
+                      ],
+                    ),
+                    Slider(
+                        value: height,
+                        min: 22,
+                        max: 200,
+                        activeColor: const Color(0xFFEB1555),
+                        inactiveColor: const Color(0xFF111328),
+                        onChanged: (double newValue) {
+                          setState(() {
+                            print(height);
+                            height = newValue.roundToDouble();
+                          });
+                        })
                   ],
                 ),
                 color: kActiveCardColor),
