@@ -155,8 +155,8 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class RoundActionButton extends StatelessWidget {
-  const RoundActionButton({Key? key, this.icon, this.onPressed})
+class RoundIconButton extends StatelessWidget {
+  const RoundIconButton({Key? key, this.icon, this.onPressed})
       : super(key: key);
 
   final IconData? icon;
