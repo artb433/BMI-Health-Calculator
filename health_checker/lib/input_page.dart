@@ -152,7 +152,7 @@ class _InputPageState extends State<InputPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               RoundIconButton(
-                                  icon: Icons.add,
+                                  icon: FontAwesomeIcons.minus,
                                   onPressed: () {
                                     setState(() {
                                       weight--;
@@ -160,7 +160,7 @@ class _InputPageState extends State<InputPage> {
                                   }),
                               const SizedBox(width: 15),
                               RoundIconButton(
-                                  icon: Icons.add,
+                                  icon: FontAwesomeIcons.plus,
                                   onPressed: () {
                                     setState(() {
                                       weight++;

@@ -48,7 +48,7 @@ class BMICalculator extends StatelessWidget {
         // primaryColor: Colors.lightBlue[600],
 
         // Define the default font family.
-        fontFamily: 'Georgia',
+        fontFamily: 'Raleway',
       ),
       home: const InputPage(),
     );
