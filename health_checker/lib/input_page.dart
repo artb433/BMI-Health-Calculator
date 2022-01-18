@@ -146,6 +146,24 @@ class _InputPageState extends State<InputPage> {
                               Text(weight.toString(), style: kNumberTextStyle),
                             ],
                           ),
+                          Row(
+                            children: [
+                              RoundIconButton(
+                                  icon: Icons.add,
+                                  onPressed: () {
+                                    setState(() {
+                                      weight--;
+                                    });
+                                  }),
+                              RoundIconButton(
+                                  icon: Icons.add,
+                                  onPressed: () {
+                                    setState(() {
+                                      weight++;
+                                    });
+                                  }),
+                            ],
+                          )
                         ],
                       ),
                       color: kActiveCardColor),
