@@ -14,16 +14,6 @@ class BMICalculator extends StatelessWidget {
         primaryColor: const Color(0xFF0A0E21),
         scaffoldBackgroundColor: const Color(0xFF0A0E21),
       ),
-
-      // theme: ThemeData(
-      //   // Define the default brightness and colors.
-      //   brightness: Brightness.dark,
-      //   primaryColor: const Color(0xFF0A0E21),
-      //   // primaryColor: Colors.lightBlue[600],
-
-      //   // Define the default font family.
-      //   fontFamily: 'Raleway',
-      // ),
       home: const InputPage(),
     );
   }
