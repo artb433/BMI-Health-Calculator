@@ -14,9 +14,7 @@ class ResultsPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Expanded(
-              child: Container(
-                  child: const Text('Your Result', style: kTitleTextStyle))),
+          Container(child: const Text('Your Result', style: kTitleTextStyle)),
           Expanded(
             child: ReusableCard(
               cardChild: Column(
@@ -31,9 +29,26 @@ class ResultsPage extends StatelessWidget {
                     '18.0',
                     style: kBMItextStyle,
                   ),
+                  Text('Your BMI result is quite low, you should eat more',
+                      style: kResultTextStyle),
                 ],
               ),
               color: kActiveCardColor,
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const ResultsPage();
+              }));
+            },
+            child: Container(
+              child: const Center(
+                  child: Text('RE-CALCULATE', style: kLargeButtonTextStyle)),
+              color: kBottomContainerColor,
+              margin: const EdgeInsets.only(top: 10),
+              width: MediaQuery.of(context).size.width,
+              height: 60,
             ),
           ),
         ],
