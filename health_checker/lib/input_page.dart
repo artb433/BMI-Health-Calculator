@@ -124,7 +124,6 @@ class _InputPageState extends State<InputPage> {
                         inactiveColor: const Color(0xFF111328),
                         onChanged: (double newValue) {
                           setState(() {
-                            print(height);
                             height = newValue.roundToDouble();
                           });
                         })

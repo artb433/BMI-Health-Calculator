@@ -14,12 +14,25 @@ class CalculatorBrain {
   }
 
   String resultComment() {
-    if (_bmi >= 25) {
-      return 'Overweight';
+    // if (_bmi >= 25) {
+    //   print('overweight');
+    //   return 'Overweight';
+    // } else if (_bmi > 18.5) {
+    //   print('normal');
+    //   return 'Normal';
+    // } else {
+    //   print('under');
+    //   return 'Underweight';
+    // }
+
+    if (_bmi < 18) {
+      return 'underweight';
+    } else if (_bmi == 18) {
+      return 'overweight';
     } else if (_bmi > 18.5) {
-      return 'Normal';
+      return 'overweight';
     } else {
-      return 'Underweight';
+      return 'unknown';
     }
   }
 
