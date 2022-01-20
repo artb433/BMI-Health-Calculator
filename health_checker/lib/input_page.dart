@@ -3,8 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:health_checker/results_page.dart';
 
 import 'constants.dart/constants.dart';
+import 'custom_widget.dart/bottom_button.dart';
 import 'custom_widget.dart/card_content.dart';
 import 'custom_widget.dart/reusable_card.dart';
+import 'custom_widget.dart/round_icon_button.dart';
 
 enum Gender {
   male,
@@ -216,64 +218,9 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          BottomButton(),
+          const BottomButton(),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
-
-class BottomButton extends StatelessWidget {
-  const BottomButton({
-    this.onTap,
-    this.text,
-    Key? key,
-  }) : super(key: key);
-  final VoidCallback? onTap;
-  final String? text;
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const ResultsPage();
-        }));
-      },
-      child: Container(
-        child:
-            Center(child: Text(text.toString(), style: kLargeButtonTextStyle)),
-        color: kBottomContainerColor,
-        margin: const EdgeInsets.only(top: 10),
-        width: MediaQuery.of(context).size.width,
-        height: 60,
-      ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  const RoundIconButton({Key? key, required this.icon, required this.onPressed})
-      : super(key: key);
-
-  final IconData? icon;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      onPressed: onPressed,
-      elevation: 0.0,
-      child: Icon(icon),
-      constraints: const BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      shape: const CircleBorder(),
-      fillColor: const Color(0xFF4C4F5E),
     );
   }
 }
