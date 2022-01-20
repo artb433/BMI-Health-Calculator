@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:health_checker/results_page.dart';
 
 import 'constants.dart/constants.dart';
 import 'custom_widget.dart/card_content.dart';
@@ -215,12 +216,19 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            child: const Text('CALCULATOR', style: kLabelTextStyle),
-            color: kBottomContainerColor,
-            margin: const EdgeInsets.only(top: 10),
-            width: MediaQuery.of(context).size.width,
-            height: 60,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const ResultsPage();
+              }));
+            },
+            child: Container(
+              child: const Text('CALCULATOR', style: kLabelTextStyle),
+              color: kBottomContainerColor,
+              margin: const EdgeInsets.only(top: 10),
+              width: MediaQuery.of(context).size.width,
+              height: 60,
+            ),
           ),
         ],
       ),
