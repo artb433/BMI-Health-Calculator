@@ -25,11 +25,13 @@ class CalculatorBrain {
 
   String hint() {
     if (_bmi >= 25) {
-      return 'You have a higher than normal body, Try to exercise more. BMI: $_bmi';
+      return 'You have a higher than normal body, Try to exercise more.';
     } else if (_bmi > 18.5) {
-      return 'You have a normal body weight. Good job.  BMI: $_bmi';
+      return 'You have a normal body weight. Good job. ';
+    } else if (_bmi < 18.5) {
+      return 'You have a lower than normal body weight. You can eat a bit more.';
     } else {
-      return 'You have a lower than normal body weight. You can eat a bit more.  BMI: $_bmi';
+      return '';
     }
   }
 }

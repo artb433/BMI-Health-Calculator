@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:health_checker/calculator_brain.dart';
 import 'package:health_checker/results_page.dart';
-
 import 'constants.dart/constants.dart';
 import 'custom_widget.dart/bottom_button.dart';
 import 'custom_widget.dart/card_content.dart';
@@ -219,18 +218,20 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          BottomButton(onTap: () {
-            CalculatorBrain calc =
-                CalculatorBrain(height: height.toInt(), weight: weight.toInt());
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => ResultsPage(
-                          bmiHint: calc.hint(),
-                          resultText: calc.resultComment(),
-                          bmiResult: calc.calculateBMI(),
-                        )));
-          }),
+          BottomButton(
+              text: 'CALCULATE',
+              onTap: () {
+                CalculatorBrain calc = CalculatorBrain(
+                    height: height.toInt(), weight: weight.toInt());
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultsPage(
+                              bmiHint: calc.hint(),
+                              resultText: calc.resultComment(),
+                              bmiResult: calc.calculateBMI(),
+                            )));
+              }),
         ],
       ),
     );

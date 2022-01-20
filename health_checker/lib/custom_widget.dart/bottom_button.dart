@@ -14,11 +14,7 @@ class BottomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const ResultsPage();
-        }));
-      },
+      onTap: onTap,
       child: Container(
         child:
             Center(child: Text(text.toString(), style: kLargeButtonTextStyle)),

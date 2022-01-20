@@ -6,12 +6,16 @@ import 'custom_widget.dart/bottom_button.dart';
 import 'custom_widget.dart/reusable_card.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({Key? key, this.resultText, this.bmiResult, this.bmiHint})
+  const ResultsPage(
+      {Key? key,
+      required this.resultText,
+      required this.bmiResult,
+      required this.bmiHint})
       : super(key: key);
 
-  final String? bmiResult;
-  final String? resultText;
-  final String? bmiHint;
+  final String bmiResult;
+  final String resultText;
+  final String bmiHint;
 
   @override
   Widget build(BuildContext context) {
@@ -27,17 +31,17 @@ class ResultsPage extends StatelessWidget {
               cardChild: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
+                children: [
                   Text(
-                    'normal',
+                    resultText,
                     style: kResultTextStyle,
                   ),
                   Text(
-                    '18.0',
+                    bmiResult,
                     style: kBMItextStyle,
                   ),
                   Text(
-                    'Your BMI result is quite low, you should eat more',
+                    bmiHint,
                     style: kBodyTextStyle,
                     textAlign: TextAlign.center,
                   ),
@@ -47,7 +51,9 @@ class ResultsPage extends StatelessWidget {
             ),
           ),
           BottomButton(
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
             text: 'RE-CALCULATE',
           ),
         ],
