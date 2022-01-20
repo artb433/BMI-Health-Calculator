@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:health_checker/constants.dart/constants.dart';
 import 'package:health_checker/input_page.dart';
 
+import 'custom_widget.dart/bottom_button.dart';
 import 'custom_widget.dart/reusable_card.dart';
 
 class ResultsPage extends StatelessWidget {
