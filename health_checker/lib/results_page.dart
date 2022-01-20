@@ -10,7 +10,13 @@ class ResultsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('BMI CALCULATOR'),
       ),
-      body: const Text('Your Result', style: kLargeButtonTextStyle),
+      body: Column(
+        children: [
+          Expanded(
+              child: Container(
+                  child: const Text('Your Result', style: kTitleTextStyle))),
+        ],
+      ),
     );
   }
 }
