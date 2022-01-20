@@ -216,26 +216,40 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const ResultsPage();
-              }));
-            },
-            child: Container(
-              child: const Center(
-                  child: Text('CALCULATE', style: kLargeButtonTextStyle)),
-              color: kBottomContainerColor,
-              margin: const EdgeInsets.only(top: 10),
-              width: MediaQuery.of(context).size.width,
-              height: 60,
-            ),
-          ),
+          BottomButton(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+class BottomButton extends StatelessWidget {
+  const BottomButton({
+    this.onTap,
+    this.text,
+    Key? key,
+  }) : super(key: key);
+  final VoidCallback? onTap;
+  final String? text;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return const ResultsPage();
+        }));
+      },
+      child: Container(
+        child:
+            Center(child: Text(text.toString(), style: kLargeButtonTextStyle)),
+        color: kBottomContainerColor,
+        margin: const EdgeInsets.only(top: 10),
+        width: MediaQuery.of(context).size.width,
+        height: 60,
       ),
     );
   }

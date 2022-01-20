@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_checker/constants.dart/constants.dart';
+import 'package:health_checker/input_page.dart';
 
 import 'custom_widget.dart/reusable_card.dart';
 
@@ -29,27 +30,19 @@ class ResultsPage extends StatelessWidget {
                     '18.0',
                     style: kBMItextStyle,
                   ),
-                  Text('Your BMI result is quite low, you should eat more',
-                      style: kResultTextStyle),
+                  Text(
+                    'Your BMI result is quite low, you should eat more',
+                    style: kBodyTextStyle,
+                    textAlign: TextAlign.center,
+                  ),
                 ],
               ),
               color: kActiveCardColor,
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const ResultsPage();
-              }));
-            },
-            child: Container(
-              child: const Center(
-                  child: Text('RE-CALCULATE', style: kLargeButtonTextStyle)),
-              color: kBottomContainerColor,
-              margin: const EdgeInsets.only(top: 10),
-              width: MediaQuery.of(context).size.width,
-              height: 60,
-            ),
+          BottomButton(
+            onTap: () {},
+            text: 'RE-CALCULATE',
           ),
         ],
       ),
