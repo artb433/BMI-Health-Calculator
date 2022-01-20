@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:health_checker/constants.dart/constants.dart';
 
+import 'custom_widget.dart/reusable_card.dart';
+
 class ResultsPage extends StatelessWidget {
   const ResultsPage({Key? key}) : super(key: key);
 
@@ -15,6 +17,14 @@ class ResultsPage extends StatelessWidget {
           Expanded(
               child: Container(
                   child: const Text('Your Result', style: kTitleTextStyle))),
+          Expanded(
+            child: ReusableCard(
+              cardChild: Column(
+                children: [],
+              ),
+              color: kActiveCardColor,
+            ),
+          ),
         ],
       ),
     );
