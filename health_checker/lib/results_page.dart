@@ -20,12 +20,17 @@ class ResultsPage extends StatelessWidget {
           Expanded(
             child: ReusableCard(
               cardChild: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
+                children: const [
                   Text(
                     'Normal',
                     style: kResultTextStyle,
-                  )
+                  ),
+                  Text(
+                    '18.0',
+                    style: kBMItextStyle,
+                  ),
                 ],
               ),
               color: kActiveCardColor,
