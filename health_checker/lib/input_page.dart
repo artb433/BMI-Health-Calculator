@@ -216,6 +216,7 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Container(
+            child: const Text('CALCULATOR', style: kLabelTextStyle),
             color: kBottomContainerColor,
             margin: const EdgeInsets.only(top: 10),
             width: MediaQuery.of(context).size.width,
