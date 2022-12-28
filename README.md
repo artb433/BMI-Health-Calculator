@@ -1,1 +1,1 @@
-# HealthChecker
+# BMI Health Calculator
